@@ -30,7 +30,7 @@ const lecturerLinks = [
   { to: "/lecturer/profile", icon: User, label: "Profile" },
 ];
 
-const lecturerSidebar = () => {
+const LecturerSidebar = () => {
   const { pathname } = useLocation();
   const { logout, user } = useAuth();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -140,4 +140,4 @@ const lecturerSidebar = () => {
   );
 };
 
-export default lecturerSidebar;
+export default LecturerSidebar;

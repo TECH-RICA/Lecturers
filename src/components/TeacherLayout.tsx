@@ -1,7 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/lib/auth-context";
-import lecturerSidebar from "./LecturerSidebar";
+import LecturerSidebar from "./LecturerSidebar";
 import { Bell, Search, ChevronDown } from "lucide-react";
 import "./styles/lecturerLayout.css";
 
@@ -28,7 +28,7 @@ const lecturerLayout = ({ children }: lecturerLayoutProps) => {
 
   return (
     <div className="portal-layout lecturer-layout">
-      <lecturerSidebar />
+      <LecturerSidebar />
       <main className="portal-main lecturer-main">
         {/* Top Header */}
         <header className="lecturer-header">
@@ -36,24 +36,25 @@ const lecturerLayout = ({ children }: lecturerLayoutProps) => {
             {!isMobile && (
               <div className="search-bar">
                 <Search size={18} className="search-icon" />
-                <input 
-                  type="text" 
-                  placeholder="Search students, assignments..." 
+                <input
+                  type="text"
+                  placeholder="Search students, assignments..."
                   className="search-input"
                 />
               </div>
             )}
           </div>
-          
+
           <div className="header-right">
-            
             <div className="lecturer-profile">
               <div className="profile-avatar">
-                {user?.name?.charAt(0) || 'T'}
+                {user?.name?.charAt(0) || "T"}
               </div>
               <div className="profile-details">
-                <span className="profile-name">{user?.name || 'lecturer'}</span>
-                <span className="profile-email">{user?.email || 'lecturer@masomo.com'}</span>
+                <span className="profile-name">{user?.name || "lecturer"}</span>
+                <span className="profile-email">
+                  {user?.email || "lecturer@masomo.com"}
+                </span>
               </div>
               <ChevronDown size={18} className="profile-chevron" />
             </div>
@@ -62,9 +63,7 @@ const lecturerLayout = ({ children }: lecturerLayoutProps) => {
 
         {/* Main Content */}
         <div className="content-wrapper lecturer-content">
-          <div className="content-container lecturer-container">
-            {children}
-          </div>
+          <div className="content-container lecturer-container">{children}</div>
         </div>
       </main>
     </div>
